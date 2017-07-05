@@ -1,5 +1,5 @@
 BOX=~/.composer/vendor/bin/box
-PHPSCOPER=~/.composer/vendor/bin/php-scoper
+PHPSCOPER=./../php-scoper/bin/php-scoper.php
 
 .DEFAULT_GOAL := help
 .PHONY: build test tu tc e2e tb
