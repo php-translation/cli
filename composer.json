@@ -1,0 +1,65 @@
+{
+    "name": "tobias/cli",
+    "license": "proprietary",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "AppBundle\\": "src/AppBundle"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/Application.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "padraic/phar-updater": "^1.0",
+        "php-translation/loco-adapter": "^0.3.0",
+        "php-translation/symfony-bundle": "^0.3.5",
+        "symfony/asset": "^3.3",
+        "symfony/console": "3.3.*",
+        "symfony/form": "^3.3",
+        "symfony/framework-bundle": "3.3.*",
+        "symfony/polyfill-apcu": "^1.0",
+        "symfony/templating": "^3.3",
+        "symfony/twig-bundle": "3.3.*",
+        "symfony/web-server-bundle": "3.3.*",
+        "twig/twig": "^2.0"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "^3.0",
+        "symfony/phpunit-bridge": "^3.0"
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "branch-alias": null
+    }
+}

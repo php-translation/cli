@@ -1,0 +1,21 @@
+{
+  "chmod": "0755",
+  "directories": [
+    "src"
+  ],
+  "files": [
+    "LICENSE"
+  ],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": ["Tests"],
+      "in": "vendor"
+    }
+  ],
+  "compression": "GZ",
+  "git-version": "package_version",
+  "main": "bin/console",
+  "output": "build/translation.phar",
+  "stub": true
+}
