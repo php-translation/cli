@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 set -e
 
@@ -87,4 +87,4 @@ git checkout master
 
 echo "New version created. Now you should run:"
 echo "git push origin gh-pages"
-echo "git push ${TAG}"
+echo "git push origin ${TAG}"
