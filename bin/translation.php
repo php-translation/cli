@@ -13,6 +13,6 @@ if (!file_exists($configFile)) {
 }
 
 $input = new ArgvInput();
-$kernel = new AppKernel('prod', false);
+$kernel = new AppKernel('dev', false);
 $application = new Application($kernel);
 $application->run($input);
