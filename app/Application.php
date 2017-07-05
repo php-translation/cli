@@ -120,6 +120,15 @@ class Application extends BaseApplication
             $command->setName(substr($name, 12));
         }
 
+        if (substr($name, 0, 7) === 'server:') {
+            $definition = $command->getDefinition();
+            if ($definition->hasOption('router')) {
+                $option = $definition->getOption('router');
+                $option->setDefault('web/router.php');
+            }
+        }
+
+
         return parent::add($command);
     }
 

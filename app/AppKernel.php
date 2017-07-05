@@ -5,6 +5,8 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+    private $projectDir;
+
     public function registerBundles()
     {
         $bundles = [
@@ -41,5 +43,27 @@ class AppKernel extends Kernel
         if (file_exists($config)) {
             $loader->load($config);
         }
+    }
+
+    /**
+     * Gets the application root dir (path of the project's LICENSE file).
+     *
+     * @return string The project root dir
+     */
+    public function getProjectDir()
+    {
+        if (null === $this->projectDir) {
+            $r = new \ReflectionObject($this);
+            $dir = $rootDir = dirname($r->getFileName());
+            while (!file_exists($dir.'/LICENSE')) {
+                if ($dir === dirname($dir)) {
+                    return $this->projectDir = parent::getProjectDir();
+                }
+                $dir = dirname($dir);
+            }
+            $this->projectDir = $dir;
+        }
+
+        return $this->projectDir;
     }
 }
