@@ -63,6 +63,8 @@ git checkout gh-pages
 
 cp build/translation.phar downloads/translation-${TAG}.phar
 git add downloads/translation-${TAG}.phar
+sha1sum downloads/translation-${TAG}.phar > translation-${TAG}.version
+git add downloads/translation-${TAG}.version
 
 SHA1=$(openssl sha1 build/translation.phar)
 
