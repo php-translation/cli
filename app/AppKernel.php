@@ -8,12 +8,12 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Symfony\Bundle\WebServerBundle\WebServerBundle(),
-            new Translation\Bundle\TranslationBundle(),
-            new AppBundle\AppBundle(),
+            new \Symfony\Bundle\TwigBundle\TwigBundle(),
+            new \Symfony\Bundle\WebServerBundle\WebServerBundle(),
+            new \Translation\Bundle\TranslationBundle(),
+            new \AppBundle\AppBundle(),
         ];
 
         return $bundles;
@@ -37,7 +37,7 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
-        $config = $this->getRootDir().'/translation.yml';
+        $config = getcwd().'/translation.yml';
         if (file_exists($config)) {
             $loader->load($config);
         }

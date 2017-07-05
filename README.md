@@ -13,3 +13,7 @@ To build a phar make sure you have [Box project](https://box-project.github.io/b
 `phar.readonly = 0` in your php.ini. 
 
 Read more at: https://moquet.net/blog/distributing-php-cli/
+
+```
+make build
+```
