@@ -19,5 +19,6 @@
   "git-version": "package_version",
   "main": "bin/translation.php",
   "output": "translation.phar",
-  "stub": true
+  "stub": true,
+  "key": "private.key"
 }

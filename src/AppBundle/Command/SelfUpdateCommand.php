@@ -1,9 +1,5 @@
 <?php
 /**
- * Humbug.
- *
- * @category   Humbug
- *
  * @copyright  Copyright (c) 2015 Pádraic Brady (http://blog.astrumfutura.com)
  * @license    https://github.com/padraic/humbug/blob/master/LICENSE New BSD License
  */
@@ -21,8 +17,8 @@ use Humbug\SelfUpdate\Strategy\GithubStrategy;
 
 class SelfUpdateCommand extends Command
 {
-    const VERSION_URL = 'https://padraic.github.io/humbug/downloads/humbug.version';
-    const PHAR_URL = 'https://padraic.github.io/humbug/downloads/humbug.phar';
+    const MANIFEST_FILE = 'https://php-translation.github.io/cli/manifest.json';
+    const PHAR_URL = 'https://php-translation.github.io/cli/downloads/translation.phar';
     const PACKAGE_NAME = 'php-translation/cli';
     const FILE_NAME = 'translation.phar';
     /**
@@ -54,14 +50,6 @@ class SelfUpdateCommand extends Command
         }
         if ($input->getOption('check')) {
             $this->printAvailableUpdates();
-
-            return;
-        }
-        /**
-         * Update to any specified stability option.
-         */
-        if ($input->getOption('dev')) {
-            $this->updateToDevelopmentBuild();
 
             return;
         }
@@ -127,14 +115,7 @@ class SelfUpdateCommand extends Command
 
         return $updater;
     }
-    protected function getDevelopmentUpdater()
-    {
-        $updater = new Updater();
-        $updater->getStrategy()->setPharUrl(self::PHAR_URL);
-        $updater->getStrategy()->setVersionUrl(self::VERSION_URL);
 
-        return $updater;
-    }
     protected function updateToStableBuild()
     {
         $this->update($this->getStableUpdater());
@@ -146,10 +127,6 @@ class SelfUpdateCommand extends Command
     protected function updateToMostRecentNonDevRemote()
     {
         $this->update($this->getMostRecentNonDevUpdater());
-    }
-    protected function updateToDevelopmentBuild()
-    {
-        $this->update($this->getDevelopmentUpdater());
     }
     protected function update(Updater $updater)
     {
@@ -166,7 +143,7 @@ class SelfUpdateCommand extends Command
             }
 
             if ($result) {
-                $this->output->writeln('<fg=green>Humbug has been updated.</fg=green>');
+                $this->output->writeln('<fg=green>PHP-Translation has been updated.</fg=green>');
                 $this->output->writeln(sprintf(
                     '<fg=green>Current version is:</fg=green> <options=bold>%s</options=bold>.',
                     $newVersion
@@ -176,7 +153,7 @@ class SelfUpdateCommand extends Command
                     $oldVersion
                 ));
             } else {
-                $this->output->writeln('<fg=green>Humbug is currently up to date.</fg=green>');
+                $this->output->writeln('<fg=green>PHP-Translation is currently up to date.</fg=green>');
                 $this->output->writeln(sprintf(
                     '<fg=green>Current version is:</fg=green> <options=bold>%s</options=bold>.',
                     $oldVersion
@@ -194,7 +171,7 @@ class SelfUpdateCommand extends Command
         try {
             $result = $updater->rollback();
             if ($result) {
-                $this->output->writeln('<fg=green>Humbug has been rolled back to prior version.</fg=green>');
+                $this->output->writeln('<fg=green>PHP-Translation has been rolled back to prior version.</fg=green>');
             } else {
                 $this->output->writeln('<fg=red>Rollback failed for reasons unknown.</fg=red>');
             }
@@ -207,7 +184,6 @@ class SelfUpdateCommand extends Command
         $this->printCurrentLocalVersion();
         $this->printCurrentStableVersion();
         $this->printCurrentPreReleaseVersion();
-        $this->printCurrentDevVersion();
         $this->output->writeln('You can select update stability using --dev, --pre or --stable when self-updating.');
     }
     protected function printCurrentLocalVersion()
@@ -224,10 +200,6 @@ class SelfUpdateCommand extends Command
     protected function printCurrentPreReleaseVersion()
     {
         $this->printVersion($this->getPreReleaseUpdater());
-    }
-    protected function printCurrentDevVersion()
-    {
-        $this->printVersion($this->getDevelopmentUpdater());
     }
     protected function printVersion(Updater $updater)
     {
@@ -258,24 +230,24 @@ class SelfUpdateCommand extends Command
     {
         $this
             ->setName('self-update')
-            ->setDescription('Update humbug.phar to most recent stable, pre-release or development build.')
+            ->setDescription('Update translation.phar to most recent stable, pre-release or development build.')
             ->addOption(
                 'dev',
                 'd',
                 InputOption::VALUE_NONE,
-                'Update to most recent development build of Humbug.'
+                'Update to most recent development build of PHP-Translation.'
             )
             ->addOption(
                 'non-dev',
                 'N',
                 InputOption::VALUE_NONE,
-                'Update to most recent non-development (alpha/beta/stable) build of Humbug tagged on Github.'
+                'Update to most recent non-development (alpha/beta/stable) build of PHP-Translation tagged on Github.'
             )
             ->addOption(
                 'pre',
                 'p',
                 InputOption::VALUE_NONE,
-                'Update to most recent pre-release version of Humbug (alpha/beta/rc) tagged on Github.'
+                'Update to most recent pre-release version of PHP-Translation (alpha/beta/rc) tagged on Github.'
             )
             ->addOption(
                 'stable',
@@ -287,7 +259,7 @@ class SelfUpdateCommand extends Command
                 'rollback',
                 'r',
                 InputOption::VALUE_NONE,
-                'Rollback to previous version of Humbug if available on filesystem.'
+                'Rollback to previous version of PHP-Translation if available on filesystem.'
             )
             ->addOption(
                 'check',
