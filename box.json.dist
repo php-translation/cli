@@ -18,6 +18,6 @@
   "compression": "GZ",
   "git-version": "package_version",
   "main": "bin/console",
-  "output": "build/translation.phar",
+  "output": "docs/build/translation.phar",
   "stub": true
 }

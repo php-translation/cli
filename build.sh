@@ -61,20 +61,20 @@ box build
 #
 git checkout gh-pages
 
-cp cliph.phar downloads/cliph-${TAG}.phar
-git add downloads/cliph-${TAG}.phar
+cp build/translation.phar downloads/translation-${TAG}.phar
+git add downloads/translation-${TAG}.phar
 
-SHA1=$(openssl sha1 cliph.phar)
+SHA1=$(openssl sha1 build/translation.phar)
 
-JSON='name:"cliph.phar"'
+JSON='name:"translation.phar"'
 JSON="${JSON},sha1:\"${SHA1}\""
-JSON="${JSON},url:\"http://mattketmo.github.io/cliph/downloads/cliph-${TAG}.phar\""
+JSON="${JSON},url:\"https://php-translation.github.io/cli/downloads/translation-${TAG}.phar\""
 JSON="${JSON},version:\"${TAG}\""
 
-if [ -f cliph.phar.pubkey ]; then
-    cp cliph.phar.pubkey pubkeys/cliph-${TAG}.phar.pubkeys
-    git add pubkeys/cliph-${TAG}.phar.pubkeys
-    JSON="${JSON},publicKey:\"http://mattketmo.github.io/cliph/pubkeys/cliph-${TAG}.phar.pubkey\""
+if [ -f build/translation.phar.pubkey ]; then
+    cp build/translation.phar.pubkey pubkeys/translation-${TAG}.phar.pubkeys
+    git add pubkeys/translation-${TAG}.phar.pubkeys
+    JSON="${JSON},publicKey:\"http://php-translation.github.io/cli/pubkeys/translation-${TAG}.phar.pubkey\""
 fi
 
 #
