@@ -29,8 +29,8 @@ build: vendor
 	# be used and `box.json.dist` must include the `tests` directory
 	#
 	composer install --prefer-dist
-	php -d zend.enable_gc=0 -d xdebug.max_nesting_level=500 $(PHPSCOPER) add-prefix --force
-	cd build && composer dump-autoload --classmap-authoritative
+	#php -d zend.enable_gc=0 -d xdebug.max_nesting_level=500 $(PHPSCOPER) add-prefix --force
+	#cd build && composer dump-autoload --classmap-authoritative
 	#
 	#
 	# Warming up cache
