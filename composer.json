@@ -21,6 +21,7 @@
         "padraic/phar-updater": "^1.0",
         "php-translation/loco-adapter": "^0.3.0",
         "php-translation/symfony-bundle": "^0.3.5",
+        "sensio/framework-extra-bundle": "^3.0",
         "symfony/asset": "^3.3",
         "symfony/console": "3.3.*",
         "symfony/form": "^3.3",

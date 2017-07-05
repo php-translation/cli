@@ -1,7 +1,9 @@
 {
   "chmod": "0755",
   "directories": [
-    "src"
+    "app",
+    "src",
+    "var"
   ],
   "files": [
     "LICENSE"
