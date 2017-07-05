@@ -36,6 +36,8 @@ build: vendor
 	#
 	#cd build && $(BOX) build
 	$(BOX) build
+	mkdir build
+	cp translation.pha* build/
 	# Install back all the dependencies
 	composer install
 

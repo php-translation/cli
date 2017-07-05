@@ -45,14 +45,6 @@ TAG=$1
 git checkout master
 git tag ${TAG}
 
-
-echo "Installing dependencies"
-composer install
-
-echo "Warming up cache"
-./bin/console cache:warmup --env=dev
-./bin/console cache:warmup --env=prod
-
 echo "Building phar"
 make build
 

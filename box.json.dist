@@ -3,14 +3,13 @@
   "directories": [
     "app",
     "src",
-    "var"
+    "web"
   ],
   "files": [
     "LICENSE"
   ],
   "finder": [
     {
-      "name": "*.php",
       "exclude": ["Tests"],
       "in": "vendor"
     }
