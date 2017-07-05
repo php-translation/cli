@@ -16,7 +16,7 @@ help:
 build:            ## Build the PHAR
 build: vendor
 	# Cleanup existing artefacts
-	rm -rf build/*
+	rm -rf build
 	# Delete local `composer.lock` to ensure fresh dependencies are used
 	rm composer.lock
 	#
