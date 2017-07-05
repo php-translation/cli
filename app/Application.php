@@ -115,6 +115,11 @@ class Application extends BaseApplication
     {
         $this->registerCommands();
 
+        $name = $command->getName();
+        if (substr($name, 0, 12) === 'translation:') {
+            $command->setName(substr($name, 12));
+        }
+
         return parent::add($command);
     }
 
