@@ -34,9 +34,9 @@ build: vendor
 	#
 	#
 	# Warming up cache
-	cd build && chmod +x ./bin/console
-	cd build && ./bin/console cache:clear  --no-warmup --no-debug --env=dev
-	cd build && ./bin/console cache:warmup --no-debug --env=prod
+	cd build && chmod +x ./bin/console.php
+	cd build && ./bin/console.php cache:clear  --no-warmup --no-debug --env=dev
+	cd build && ./bin/console.php cache:warmup --no-debug --env=prod
 	cd build && $(BOX) build
 	# Install back all the dependencies
 	composer install
