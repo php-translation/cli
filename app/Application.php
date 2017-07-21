@@ -11,6 +11,7 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Bundle\WebServerBundle\WebServerBundle;
 use Translation\Bundle\TranslationBundle;
+use AppBundle\AppBundle;
 
 /**
  * Application.
@@ -136,7 +137,7 @@ class Application extends BaseApplication
         $container = $this->kernel->getContainer();
 
         foreach ($this->kernel->getBundles() as $bundle) {
-            if ($bundle instanceof WebServerBundle || $bundle instanceof TranslationBundle) {
+            if ($bundle instanceof WebServerBundle || $bundle instanceof TranslationBundle || $bundle instanceof AppBundle) {
                 $bundle->registerCommands($this);
             }
         }
