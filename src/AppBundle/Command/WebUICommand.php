@@ -45,10 +45,6 @@ class WebUICommand extends ContainerAwareCommand
      */
     private function createRouter($file)
     {
-        if (file_exists($file)) {
-            return;
-        }
-
         $pharName = __FILE__;
         $content = <<<ROUTER
 <?php
