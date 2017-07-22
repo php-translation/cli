@@ -45,13 +45,10 @@ class WebUICommand extends ContainerAwareCommand
      */
     private function createRouter($file)
     {
-        $pharName = __FILE__;
-        $content = <<<ROUTER
-<?php
+        $content = file_get_contents(__DIR__.'/../Resources/router.txt');
+        $root = $this->getContainer()->getParameter('kernel.project_dir');
 
-require_once "$pharName";
-
-ROUTER;
+        $content = str_replace('__ROOT__', "'$root'", $content);
 
         file_put_contents($file, $content);
     }
