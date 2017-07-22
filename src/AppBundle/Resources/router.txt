@@ -27,9 +27,19 @@ if (ini_get('auto_prepend_file') && !in_array(realpath(ini_get('auto_prepend_fil
 
 $_SERVER['DOCUMENT_ROOT'] = __ROOT__.'/web';
 
-if (is_file($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.$_SERVER['SCRIPT_NAME'])) {
-    return false;
+$file = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.$_SERVER['SCRIPT_NAME'];
+if (is_file($file)) {
+    if ('css' === substr($file, -3)) {
+        header("Content-Type: text/css");
+    }
+    if ('js' === substr($file, -2)) {
+        header("Content-Type: application/javascript");
+    }
+    header("Content-Length: " . filesize($file));
+    readfile($file);
+    return;
 }
+
 
 $script = getenv('APP_FRONT_CONTROLLER') ?: 'index.php';
 
