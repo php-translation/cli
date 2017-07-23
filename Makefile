@@ -1,5 +1,5 @@
 BOX=~/.composer/vendor/bin/box
-PHPSCOPER=./../php-scoper/bin/php-scoper.php
+PHPSCOPER=./../php-scoper/bin/php-scoper
 
 .DEFAULT_GOAL := help
 .PHONY: build test tu tc e2e tb
@@ -30,14 +30,15 @@ build: vendor
 	#
 	composer install --prefer-dist
 	php bin/console asset:install
-	#php -d zend.enable_gc=0 -d xdebug.max_nesting_level=500 $(PHPSCOPER) add-prefix --force
-	#cd build && composer dump-autoload --classmap-authoritative
+	php -d zend.enable_gc=0 -d xdebug.max_nesting_level=500 $(PHPSCOPER) add-prefix --prefix PharTranslation --force
+	find ./build/vendor/symfony -type f -exec perl -pi -e 's/(?:PharTranslation\\+)?Symfony(\\+)/PharTranslation\1Symfony\1/g' {} \;
+	cd build && composer dump-autoload --classmap-authoritative
 	#
 	#
-	#cd build && $(BOX) build
-	$(BOX) build
-	mkdir build
-	cp translation.pha* build/
+	cd build && $(BOX) build
+	#$(BOX) build
+	#mkdir build
+	#cp translation.pha* build/
 	# Install back all the dependencies
 	composer install
 

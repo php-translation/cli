@@ -15,4 +15,4 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-private.key
+translation.phar
