@@ -2,6 +2,10 @@
     "name": "tobias/cli",
     "license": "proprietary",
     "type": "project",
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/Nyholm/lexer"},
+        { "type": "vcs", "url": "https://github.com/Nyholm/collections"}
+    ],
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle"
@@ -30,6 +34,8 @@
         "symfony/templating": "^3.3",
         "symfony/twig-bundle": "3.3.*",
         "symfony/web-server-bundle": "3.3.*",
+        "doctrine/lexer": "dev-psr4 as v1.0.2",
+        "doctrine/collections": "dev-psr4 as v1.99.0",
         "twig/twig": "2.3.*"
     },
     "scripts": {

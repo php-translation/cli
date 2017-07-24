@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cf97ca61a55749963f73dcbf7e5fe71",
+    "content-hash": "538462cd1432e71ed02902ad2cb081dc",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -195,16 +195,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.4.0",
+            "version": "dev-psr4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/collections.git",
-                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
+                "url": "https://github.com/Nyholm/collections.git",
+                "reference": "80705174324c8837a091fc8b02cd2885fb30aa7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
-                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "url": "https://api.github.com/repos/Nyholm/collections/zipball/80705174324c8837a091fc8b02cd2885fb30aa7f",
+                "reference": "80705174324c8837a091fc8b02cd2885fb30aa7f",
                 "shasum": ""
             },
             "require": {
@@ -221,15 +221,23 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Collections\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Collections\\": "lib/Doctrine/Common/Collections"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Doctrine\\Tests\\": "tests/Doctrine/Tests"
+                }
+            },
             "license": [
                 "MIT"
             ],
             "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
                 {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
@@ -237,10 +245,6 @@
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Jonathan Wage",
@@ -258,7 +262,10 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2017-01-03T10:49:41+00:00"
+            "support": {
+                "source": "https://github.com/Nyholm/collections/tree/psr4"
+            },
+            "time": "2017-07-24 08:06:49"
         },
         {
             "name": "doctrine/common",
@@ -402,16 +409,16 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0.1",
+            "version": "dev-psr4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+                "url": "https://github.com/Nyholm/lexer.git",
+                "reference": "39eb8bc0b037c32e8fdc6ff62658fc528768ea99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "url": "https://api.github.com/repos/Nyholm/lexer/zipball/39eb8bc0b037c32e8fdc6ff62658fc528768ea99",
+                "reference": "39eb8bc0b037c32e8fdc6ff62658fc528768ea99",
                 "shasum": ""
             },
             "require": {
@@ -424,22 +431,21 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Johannes Schmitt",
@@ -452,7 +458,10 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "support": {
+                "source": "https://github.com/Nyholm/lexer/tree/psr4"
+            },
+            "time": "2017-07-24 07:52:22"
         },
         {
             "name": "friendsofapi/localise.biz",
@@ -3922,9 +3931,25 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "v1.0.2",
+            "alias_normalized": "1.0.2.0",
+            "version": "dev-psr4",
+            "package": "doctrine/lexer"
+        },
+        {
+            "alias": "v1.99.0",
+            "alias_normalized": "1.99.0.0",
+            "version": "dev-psr4",
+            "package": "doctrine/collections"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "doctrine/lexer": 20,
+        "doctrine/collections": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
