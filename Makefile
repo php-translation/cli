@@ -31,9 +31,13 @@ build: vendor
 	composer install --prefer-dist
 	php bin/console asset:install
 	php -d zend.enable_gc=0 -d xdebug.max_nesting_level=500 $(PHPSCOPER) add-prefix --prefix PharTranslation --force
-	find ./build/vendor/symfony -type f -exec perl -pi -e 's/(?:PharTranslation\\+)?Symfony(\\+)/PharTranslation\1Symfony\1/g' {} \;
-	find ./build/vendor -type f -name "*.xml" -exec perl -pi -e 's/\.class">(.*?)\\/.class">PharTranslation\\\1\\/g' {} \;
+	# Replace all namespaces in configuration files
+	find ./build/vendor -type f -name "*.xml" -exec perl -pi -e 's/\.class">([^<]*?)\\/.class">PharTranslation\\\1\\/g' {} \;
+	find ./build/vendor -type f -name "*.xml" -exec perl -pi -e 's/ class="([^"]*?)\\/ class="PharTranslation\\\1\\/g' {} \;
+	find ./build/vendor -type f -name "*.xml" -exec perl -pi -e 's/ id="([^"]*?)\\/ id="PharTranslation\\\1\\/g' {} \;
 	find ./build/vendor -type f -name "*.yml" -exec perl -pi -e 's/class: (.*?)\\/class: PharTranslation\\\1\\/g' {} \;
+	# Replace all namespace strings in the Symfony source
+	find ./build/vendor/symfony -type f -exec perl -pi -e 's/(?:PharTranslation\\+)?Symfony(\\+)/PharTranslation\1Symfony\1/g' {} \;
 	cd build && composer dump-autoload --classmap-authoritative
 	#
 	#
