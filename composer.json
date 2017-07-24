@@ -30,7 +30,7 @@
         "symfony/templating": "^3.3",
         "symfony/twig-bundle": "3.3.*",
         "symfony/web-server-bundle": "3.3.*",
-        "twig/twig": "^2.0"
+        "twig/twig": "2.3.*"
     },
     "scripts": {
         "symfony-scripts": [
