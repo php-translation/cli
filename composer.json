@@ -22,8 +22,11 @@
     },
     "require": {
         "php": "^7.0",
+        "doctrine/collections": "dev-psr4 as v1.99.0",
+        "doctrine/lexer": "dev-psr4 as v1.0.2",
         "padraic/phar-updater": "^1.0",
-        "php-translation/loco-adapter": "^0.3.0",
+        "php-translation/loco-adapter": "^0.3.1",
+        "php-translation/phraseapp-adapter": "^0.1.0",
         "php-translation/symfony-bundle": "^0.3.5",
         "sensio/framework-extra-bundle": "^3.0",
         "symfony/asset": "^3.3",
@@ -34,8 +37,6 @@
         "symfony/templating": "^3.3",
         "symfony/twig-bundle": "3.3.*",
         "symfony/web-server-bundle": "3.3.*",
-        "doctrine/lexer": "dev-psr4 as v1.0.2",
-        "doctrine/collections": "dev-psr4 as v1.99.0",
         "twig/twig": "2.3.*"
     },
     "scripts": {

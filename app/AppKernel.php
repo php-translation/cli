@@ -16,6 +16,9 @@ class AppKernel extends Kernel
             new \Symfony\Bundle\WebServerBundle\WebServerBundle(),
             new \Translation\Bundle\TranslationBundle(),
             new \AppBundle\AppBundle(),
+
+            new \Translation\PlatformAdapter\Loco\Bridge\Symfony\TranslationAdapterLocoBundle(),
+            new \Translation\PlatformAdapter\Phraseapp\Bridge\Symfony\TranslationAdapterPhraseAppBundle(),
         ];
 
         return $bundles;
