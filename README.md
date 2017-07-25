@@ -6,6 +6,52 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-translation/cli.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-translation/cli)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-translation/cli.svg?style=flat-square)](https://packagist.org/packages/php-translation/cli)
 
+CLI support for translation. It allows you use the TranslationBundle without installing it in your application. You can
+use the WebUI and sync translations with remote storages.
+ 
+### Use
+
+To use the CLI you need to fetch the binary and add your configuration file. 
+
+```bash
+wget https://php-translation.github.io/cli/downloads/translation.phar
+chmod +x translation.phar
+touch translation.yml
+```
+
+Example configuration is the same as for the TranslationBundle. 
+
+```yaml
+// config.yml
+translation:
+  locales: ["en", "sv"]
+  configs:
+    app:
+      dirs: ["%kernel.project_dir%/app/Resources/views", "%kernel.project_dir%/src"]
+      output_dir: "%kernel.project_dir%/app/Resources/translations"
+      excluded_names: ["*TestCase.php", "*Test.php"]
+      excluded_dirs: [cache, data, logs]
+```
+
+> **Note:** "%kernel.project_dir%" will be your root directory. 
+
+You may now run the same commands as you do with the TranslationBundle:
+
+* translation:download                                  
+* translation:extract  
+* translation:sync  
+* etc
+
+``` bash
+php translation.phar translation:download
+```
+
+
+You may also run PHP's web server with the WebUI with: 
+ 
+``` bash
+php translation.phar webui
+```
 
 ### Build
 
