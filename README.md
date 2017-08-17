@@ -22,7 +22,7 @@ touch translation.yml
 Example configuration is the same as for the TranslationBundle. 
 
 ```yaml
-// config.yml
+# translation.yml
 translation:
   locales: ["en", "sv"]
   configs:
