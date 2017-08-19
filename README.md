@@ -34,17 +34,17 @@ translation:
 
 > **Note:** "%translation.project_root%" will be your `cwd()` from where you execute the command.
 
-You may now run the same commands as you do with the TranslationBundle:
+You may now run the same commands as you do with the TranslationBundle but without
+the "translation:" prefix
 
-* translation:download                                  
-* translation:extract  
-* translation:sync  
+* download                                  
+* extract  
+* sync  
 * etc
 
 ``` bash
-php translation.phar translation:download
+php translation.phar download
 ```
-
 
 You may also run PHP's web server with the WebUI with: 
  
