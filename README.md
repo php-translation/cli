@@ -27,13 +27,13 @@ translation:
   locales: ["en", "sv"]
   configs:
     app:
-      dirs: ["%kernel.project_dir%/app/Resources/views", "%kernel.project_dir%/src"]
-      output_dir: "%kernel.project_dir%/app/Resources/translations"
+      dirs: ["%translation.project_root%/app/Resources/views", "%translation.project_root%/src"]
+      output_dir: "%translation.project_root%/app/Resources/translations"
       excluded_names: ["*TestCase.php", "*Test.php"]
       excluded_dirs: [cache, data, logs]
 ```
 
-> **Note:** "%kernel.project_dir%" will be your root directory. 
+> **Note:** "%translation.project_root%" will be your `cwd()` from where you execute the command.
 
 You may now run the same commands as you do with the TranslationBundle:
 
