@@ -1,6 +1,6 @@
 # CLI support for translation
 
-[![Latest Version](https://img.shields.io/github/release/php-translation/cli.svg?style=flat-square)](https://github.com/php-translation/cli/releases)
+[![Latest Version](https://img.shields.io/github/tag/php-translation/cli.svg?style=flat-square)](https://github.com/php-translation/cli/releases)
 [![Build Status](https://img.shields.io/travis/php-translation/cli.svg?style=flat-square)](https://travis-ci.org/php-translation/cli)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-translation/cli.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-translation/cli)
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-translation/cli.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-translation/cli)
