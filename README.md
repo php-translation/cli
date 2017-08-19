@@ -4,7 +4,6 @@
 [![Build Status](https://img.shields.io/travis/php-translation/cli.svg?style=flat-square)](https://travis-ci.org/php-translation/cli)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-translation/cli.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-translation/cli)
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-translation/cli.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-translation/cli)
-[![Total Downloads](https://img.shields.io/packagist/dt/php-translation/cli.svg?style=flat-square)](https://packagist.org/packages/php-translation/cli)
 
 CLI support for translation. It allows you use the TranslationBundle without installing it in your application. You can
 use the WebUI and sync translations with remote storages.
