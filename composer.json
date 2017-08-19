@@ -26,6 +26,7 @@
         "doctrine/lexer": "dev-psr4 as v1.0.2",
         "guzzlehttp/psr7": "^1.4",
         "padraic/phar-updater": "^1.0",
+        "php-http/discovery": "dev-all-psr4 as 1.7",
         "php-http/curl-client": "^1.7",
         "php-http/message": "^1.6",
         "php-translation/flysystem-adapter": "^0.2.0",
