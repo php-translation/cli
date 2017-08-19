@@ -8,7 +8,6 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Bundle\WebServerBundle\WebServerBundle;
 use Translation\Bundle\TranslationBundle;
 use AppBundle\AppBundle;
