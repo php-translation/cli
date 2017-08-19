@@ -40,3 +40,4 @@ twig:
 translation:
   webui:
     enabled: true
+    file_base_path: "%translation.project_root%"
