@@ -26,6 +26,7 @@ translation:
   locales: ["en", "sv"]
   configs:
     app:
+      project_root: "%translation.project_root%" # This line is important for the CLI config. 
       dirs: ["%translation.project_root%/app/Resources/views", "%translation.project_root%/src"]
       output_dir: "%translation.project_root%/app/Resources/translations"
       excluded_names: ["*TestCase.php", "*Test.php"]
