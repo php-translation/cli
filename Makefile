@@ -38,6 +38,8 @@ build: vendor
 	find ./build/vendor -type f -name "*.yml" -exec perl -pi -e 's/class: (.*?)\\/class: PharTranslation\\\1\\/g' {} \;
 	# Replace all namespace strings in the Symfony source
 	find ./build/vendor/symfony -type f -exec perl -pi -e 's/(?:PharTranslation\\+)?Symfony(\\+)/PharTranslation\1Symfony\1/g' {} \;
+	# Handle doctrine annotations
+	find ./build/vendor/doctrine/annotations/lib -type f -name "*.php" -exec perl -pi -e "s/'Doctrine(\\\+)Common\\\+Annotations\\\+Annotation(.+?)'/'PharTranslation\1Doctrine\1Common\1Annotations\1Annotation\2'/g" {} \;
 	cd build && composer dump-autoload --classmap-authoritative
 	#
 	#
