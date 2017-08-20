@@ -41,3 +41,7 @@ translation:
   webui:
     enabled: true
     file_base_path: "%translation.project_root%"
+
+translation_adapter_phrase_app:
+  project_id: 'n/a'
+  token: 'n/a'
