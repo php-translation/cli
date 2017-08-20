@@ -33,7 +33,7 @@
         "php-translation/flysystem-adapter": "^0.2.0",
         "php-translation/loco-adapter": "^0.4",
         "php-translation/phraseapp-adapter": "^0.2",
-        "php-translation/symfony-bundle": "0.4.x-dev",
+        "php-translation/symfony-bundle": "^0.4",
         "sensio/framework-extra-bundle": "^3.0",
         "symfony/asset": "^3.3",
         "symfony/console": "3.3.*",

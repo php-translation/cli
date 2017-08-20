@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e95e7c3b3369e666ee697a9441c18d03",
+    "content-hash": "f58091a8c9cc4cf0ad86523d07149550",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -994,6 +994,62 @@
             "time": "2017-03-13T16:27:32+00:00"
         },
         {
+            "name": "php-http/cache-plugin",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/cache-plugin.git",
+                "reference": "fe2730638f254934529006eb38aad8b5d427f475"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/cache-plugin/zipball/fe2730638f254934529006eb38aad8b5d427f475",
+                "reference": "fe2730638f254934529006eb38aad8b5d427f475",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0",
+                "php-http/client-common": "^1.1",
+                "php-http/message-factory": "^1.0",
+                "psr/cache": "^1.0",
+                "symfony/options-resolver": "^2.6 || ^3.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "^1.0",
+                "phpspec/phpspec": "^2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Client\\Common\\Plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "PSR-6 Cache plugin for HTTPlug",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "cache",
+                "http",
+                "httplug",
+                "plugin"
+            ],
+            "time": "2017-04-05T20:09:01+00:00"
+        },
+        {
             "name": "php-http/client-common",
             "version": "1.5.0",
             "source": {
@@ -1229,6 +1285,154 @@
             "time": "2016-08-31T08:30:17+00:00"
         },
         {
+            "name": "php-http/httplug-bundle",
+            "version": "v1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/HttplugBundle.git",
+                "reference": "d1fda4a95973d642d055e0f4b33f3a5b570b1220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/HttplugBundle/zipball/d1fda4a95973d642d055e0f4b33f3a5b570b1220",
+                "reference": "d1fda4a95973d642d055e0f4b33f3a5b570b1220",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "php-http/cache-plugin": "^1.4",
+                "php-http/client-common": "^1.2",
+                "php-http/client-implementation": "^1.0",
+                "php-http/discovery": "^1.0",
+                "php-http/logger-plugin": "^1.0",
+                "php-http/message": "^1.4",
+                "php-http/message-factory": "^1.0.2",
+                "php-http/stopwatch-plugin": "^1.0",
+                "symfony/asset": "^2.8 || ^3.0",
+                "symfony/event-dispatcher": "^2.8 || ^3.0",
+                "symfony/framework-bundle": "^2.8 || ^3.0",
+                "symfony/options-resolver": "^2.8 || ^3.0",
+                "twig/twig": "^1.18 || ^2.0"
+            },
+            "conflict": {
+                "php-http/guzzle6-adapter": "<1.1"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-dependency-injection-test": "^1.0",
+                "nyholm/nsa": "^1.1",
+                "php-http/buzz-adapter": "^0.3",
+                "php-http/curl-client": "^1.0",
+                "php-http/guzzle6-adapter": "^1.1.1",
+                "php-http/mock-client": "^1.0",
+                "php-http/react-adapter": "^0.2.1",
+                "php-http/socket-client": "^1.0",
+                "phpunit/php-token-stream": "^1.1.8",
+                "phpunit/phpunit": "^4.5 || ^5.4",
+                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
+                "symfony/browser-kit": "^2.8 || ^3.0",
+                "symfony/cache": "^3.1",
+                "symfony/dom-crawler": "^2.8 || ^3.0",
+                "symfony/finder": "^2.7 || ^3.0",
+                "symfony/phpunit-bridge": "^3.2",
+                "symfony/twig-bridge": "^2.8 || ^3.0",
+                "symfony/twig-bundle": "^2.8 || ^3.0",
+                "symfony/web-profiler-bundle": "^2.8 || ^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\HttplugBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Buchmann",
+                    "email": "mail@davidbu.ch"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Symfony integration for HTTPlug",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "adapter",
+                "bundle",
+                "discovery",
+                "factory",
+                "http",
+                "httplug",
+                "message",
+                "php-http"
+            ],
+            "time": "2017-08-05T08:16:24+00:00"
+        },
+        {
+            "name": "php-http/logger-plugin",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/logger-plugin.git",
+                "reference": "d6c2ac7d542bf9928a0ac7a8a249d02848b824ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/logger-plugin/zipball/d6c2ac7d542bf9928a0ac7a8a249d02848b824ec",
+                "reference": "d6c2ac7d542bf9928a0ac7a8a249d02848b824ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "php-http/client-common": "^1.1",
+                "php-http/message": "^1.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "^1.0",
+                "phpspec/phpspec": "^2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Client\\Common\\Plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "PSR-3 Logger plugin for HTTPlug",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "http",
+                "httplug",
+                "logger",
+                "plugin"
+            ],
+            "time": "2016-05-04T22:43:46+00:00"
+        },
+        {
             "name": "php-http/message",
             "version": "1.6.0",
             "source": {
@@ -1458,6 +1662,60 @@
             "time": "2016-01-26T13:27:02+00:00"
         },
         {
+            "name": "php-http/stopwatch-plugin",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/stopwatch-plugin.git",
+                "reference": "9a097099904a1d218ffcfe32be8344eb03da41d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/stopwatch-plugin/zipball/9a097099904a1d218ffcfe32be8344eb03da41d8",
+                "reference": "9a097099904a1d218ffcfe32be8344eb03da41d8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "php-http/client-common": "^1.1",
+                "symfony/stopwatch": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "^1.0",
+                "phpspec/phpspec": "^2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Client\\Common\\Plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Symfony Stopwatch plugin for HTTPlug",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "http",
+                "httplug",
+                "plugin",
+                "stopwatch"
+            ],
+            "time": "2016-05-19T06:10:14+00:00"
+        },
+        {
             "name": "php-translation/common",
             "version": "0.2.2",
             "source": {
@@ -1502,16 +1760,16 @@
         },
         {
             "name": "php-translation/extractor",
-            "version": "1.1.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-translation/extractor.git",
-                "reference": "460f461fa891e9030dcf53b60e9114bdef38c273"
+                "reference": "8165c2425112bb6e5b3676a878e1d05ea8842395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/extractor/zipball/460f461fa891e9030dcf53b60e9114bdef38c273",
-                "reference": "460f461fa891e9030dcf53b60e9114bdef38c273",
+                "url": "https://api.github.com/repos/php-translation/extractor/zipball/8165c2425112bb6e5b3676a878e1d05ea8842395",
+                "reference": "8165c2425112bb6e5b3676a878e1d05ea8842395",
                 "shasum": ""
             },
             "require": {
@@ -1522,9 +1780,10 @@
                 "twig/twig": "^1.27 || ^2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.4",
+                "phpunit/phpunit": "^4.8.36 || ^5.5 || ^6.2",
                 "symfony/translation": "^3.0",
-                "symfony/twig-bridge": "^3.0"
+                "symfony/twig-bridge": "^3.0",
+                "symfony/validator": "^2.7 || ^3.0"
             },
             "type": "library",
             "extra": {
@@ -1548,32 +1807,32 @@
                 }
             ],
             "description": "Extract translations form the source code",
-            "time": "2017-08-12T17:02:37+00:00"
+            "time": "2017-08-19T15:00:43+00:00"
         },
         {
             "name": "php-translation/flysystem-adapter",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-translation/flysystem-adapter.git",
-                "reference": "0fbc71175c6a2a39f01858b64783ca01822be48d"
+                "reference": "813f0ddf3df7b192bb1e6587d5928626862a1e65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/flysystem-adapter/zipball/0fbc71175c6a2a39f01858b64783ca01822be48d",
-                "reference": "0fbc71175c6a2a39f01858b64783ca01822be48d",
+                "url": "https://api.github.com/repos/php-translation/flysystem-adapter/zipball/813f0ddf3df7b192bb1e6587d5928626862a1e65",
+                "reference": "813f0ddf3df7b192bb1e6587d5928626862a1e65",
                 "shasum": ""
             },
             "require": {
                 "league/flysystem": "^1.0",
                 "php": "^5.5 || ^7.0",
                 "php-translation/common": "^0.2",
-                "php-translation/symfony-storage": "^0.2",
+                "php-translation/symfony-storage": "^0.3.2",
                 "symfony/translation": "^2.7 || ^3.0"
             },
             "require-dev": {
-                "nyholm/symfony-bundle-test": "^1.0",
-                "phpunit/phpunit": "^4.5 || ^5.4"
+                "nyholm/symfony-bundle-test": "^1.2",
+                "phpunit/phpunit": "^4.8.36 || ^5.5 || ^6.2"
             },
             "type": "library",
             "extra": {
@@ -1597,37 +1856,37 @@
                 }
             ],
             "description": "Adapter for flysystem.",
-            "time": "2017-01-03T08:55:01+00:00"
+            "time": "2017-08-20T08:42:18+00:00"
         },
         {
             "name": "php-translation/loco-adapter",
-            "version": "0.3.1",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-translation/loco-adapter.git",
-                "reference": "a3369890dc8d40c9f9812c786faa5bb493254e4c"
+                "reference": "a1e10ec0fae39f21915b86bbeccf48a971c6f6c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/loco-adapter/zipball/a3369890dc8d40c9f9812c786faa5bb493254e4c",
-                "reference": "a3369890dc8d40c9f9812c786faa5bb493254e4c",
+                "url": "https://api.github.com/repos/php-translation/loco-adapter/zipball/a1e10ec0fae39f21915b86bbeccf48a971c6f6c5",
+                "reference": "a1e10ec0fae39f21915b86bbeccf48a971c6f6c5",
                 "shasum": ""
             },
             "require": {
                 "friendsofapi/localise.biz": "^0.2",
                 "php": "^7.0",
                 "php-translation/common": "^0.2",
-                "php-translation/symfony-storage": "^0.2",
+                "php-translation/symfony-storage": "^0.3.2",
                 "symfony/translation": "^2.7 || ^3.0",
                 "symfony/yaml": "^2.7 || ^3.0"
             },
             "require-dev": {
                 "guzzlehttp/psr7": "^1.3",
-                "nyholm/symfony-bundle-test": "^1.0",
+                "nyholm/symfony-bundle-test": "^1.2",
                 "php-http/curl-client": "^1.6",
                 "php-http/httplug-bundle": "^1.3",
                 "php-http/message": "^1.4",
-                "phpunit/phpunit": "^4.5 || ^5.4"
+                "phpunit/phpunit": "^6.2"
             },
             "type": "library",
             "extra": {
@@ -1651,42 +1910,43 @@
                 }
             ],
             "description": "Adapter for loco.",
-            "time": "2017-06-14T16:24:36+00:00"
+            "time": "2017-08-20T08:21:21+00:00"
         },
         {
             "name": "php-translation/phraseapp-adapter",
-            "version": "v0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-translation/phraseapp-adapter.git",
-                "reference": "17029a950784dbe40c1cb695f51bcf203a4c74c4"
+                "reference": "a1ee7ae4a48a1f058f0f8399e258b2efe72aee9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/phraseapp-adapter/zipball/17029a950784dbe40c1cb695f51bcf203a4c74c4",
-                "reference": "17029a950784dbe40c1cb695f51bcf203a4c74c4",
+                "url": "https://api.github.com/repos/php-translation/phraseapp-adapter/zipball/a1ee7ae4a48a1f058f0f8399e258b2efe72aee9e",
+                "reference": "a1ee7ae4a48a1f058f0f8399e258b2efe72aee9e",
                 "shasum": ""
             },
             "require": {
                 "friendsofapi/phraseapp": "^0.3.0",
                 "php": "^7.0",
                 "php-translation/common": "^0.2",
-                "php-translation/symfony-storage": "^0.2",
-                "symfony/translation": "^2.7 || ^3.0"
+                "php-translation/symfony-storage": "^0.3.2",
+                "symfony/translation": "^2.7 || ^3.0",
+                "symfony/yaml": "^2.7 || ^3.0"
             },
             "require-dev": {
                 "guzzlehttp/psr7": "^1.3",
-                "nyholm/symfony-bundle-test": "^1.0",
+                "nyholm/symfony-bundle-test": "^1.2",
                 "php-http/curl-client": "^1.6",
                 "php-http/httplug-bundle": "^1.3",
                 "php-http/message": "^1.4",
                 "phpunit/php-token-stream": "^1.4.9",
-                "phpunit/phpunit": "^5.7"
+                "phpunit/phpunit": "^6.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.1-dev"
+                    "dev-master": "0.2-dev"
                 }
             },
             "autoload": {
@@ -1709,43 +1969,45 @@
                 }
             ],
             "description": "Adapter for phraseapp.",
-            "time": "2017-02-02T08:20:26+00:00"
+            "time": "2017-08-20T08:18:29+00:00"
         },
         {
             "name": "php-translation/symfony-bundle",
-            "version": "0.3.6",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-translation/symfony-bundle.git",
-                "reference": "c9e9687284bb41605fb2730fd4130320d2d9f083"
+                "reference": "aae58657e6239c935db803e32a73df609020225b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/symfony-bundle/zipball/c9e9687284bb41605fb2730fd4130320d2d9f083",
-                "reference": "c9e9687284bb41605fb2730fd4130320d2d9f083",
+                "url": "https://api.github.com/repos/php-translation/symfony-bundle/zipball/aae58657e6239c935db803e32a73df609020225b",
+                "reference": "aae58657e6239c935db803e32a73df609020225b",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5 || ^7.0",
                 "php-translation/common": "^0.2.1",
-                "php-translation/extractor": "^1.1.1",
-                "php-translation/symfony-storage": "^0.2.1",
+                "php-translation/extractor": "^1.2",
+                "php-translation/symfony-storage": "^0.3.2",
                 "symfony/finder": "^2.7 || ^3.0",
                 "symfony/framework-bundle": "^2.7 || ^3.0",
+                "symfony/intl": "^2.7 || ^3.0",
                 "symfony/translation": "^2.7 || ^3.0",
                 "symfony/validator": "^2.7 || ^3.0"
             },
             "require-dev": {
-                "guzzlehttp/psr7": "^1.3",
-                "matthiasnoback/symfony-dependency-injection-test": "^1.0",
-                "nyholm/nsa": "^1.0",
-                "nyholm/symfony-bundle-test": "^1.0.2",
-                "php-http/curl-client": "^1.0",
-                "php-http/message": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "matthiasnoback/symfony-dependency-injection-test": "^1.0 || ^2.0",
+                "nyholm/nsa": "^1.1",
+                "nyholm/symfony-bundle-test": "^1.2",
+                "php-http/curl-client": "^1.7",
+                "php-http/message": "^1.6",
                 "php-http/message-factory": "^1.0.2",
                 "php-translation/translator": "^0.1",
-                "phpunit/phpunit": "^4.5 || ^5.4",
+                "phpunit/phpunit": "^4.8.36 || ^5.5 || ^6.2",
                 "symfony/asset": "^2.7 || ^3.0",
+                "symfony/console": "^2.7 || ^3.0",
                 "symfony/dependency-injection": "^2.7 || ^3.0",
                 "symfony/templating": "^2.7 || ^3.0",
                 "symfony/twig-bridge": "^2.7 || ^3.0",
@@ -1776,30 +2038,30 @@
                     "email": "tobias.nyholm@gmail.com"
                 }
             ],
-            "time": "2017-07-11T16:33:00+00:00"
+            "time": "2017-08-20T15:55:06+00:00"
         },
         {
             "name": "php-translation/symfony-storage",
-            "version": "0.2.2",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-translation/symfony-storage.git",
-                "reference": "c32be251fbaaff99f4428a905593d078dd91aff5"
+                "reference": "05b9c27e80552b7358ef6696a9f8234682a3ebb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/symfony-storage/zipball/c32be251fbaaff99f4428a905593d078dd91aff5",
-                "reference": "c32be251fbaaff99f4428a905593d078dd91aff5",
+                "url": "https://api.github.com/repos/php-translation/symfony-storage/zipball/05b9c27e80552b7358ef6696a9f8234682a3ebb4",
+                "reference": "05b9c27e80552b7358ef6696a9f8234682a3ebb4",
                 "shasum": ""
             },
             "require": {
-                "nyholm/nsa": "^1.0.1",
+                "nyholm/nsa": "^1.1",
                 "php": "^5.5 || ^7.0",
                 "php-translation/common": "^0.2.1",
                 "symfony/translation": "^2.7 || ^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.4",
+                "phpunit/phpunit": "^4.8.36 || ^5.5 || ^6.2",
                 "symfony/framework-bundle": "^2.7 || ^3.0"
             },
             "type": "library",
@@ -1824,7 +2086,7 @@
                 }
             ],
             "description": "A translation file storage using Symfony translation component.",
-            "time": "2017-02-01T17:32:42+00:00"
+            "time": "2017-08-19T23:58:45+00:00"
         },
         {
             "name": "psr/cache",
