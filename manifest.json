@@ -16,5 +16,11 @@
         "sha1": "SHA1(build/translation.phar)= ac60876565c5ed1b6cd79b8431704c96da6b7ba9",
         "url": "https://php-translation.github.io/cli/downloads/translation-0.2.1.phar",
         "version": "0.2.1"
+    },
+    {
+        "name": "translation.phar",
+        "sha1": "SHA1(build/translation.phar)= 73eb5746554a3c34031389ce6bffb0817a6ea168",
+        "url": "https://php-translation.github.io/cli/downloads/translation-0.3.0.phar",
+        "version": "0.3.0"
     }
 ]
